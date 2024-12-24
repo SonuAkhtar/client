@@ -1,0 +1,32 @@
+@use "../../app/variables" as *;
+
+.container {
+  // position: fixed;
+  // position: -webkit-sticky;
+  // top: 0;
+  // left: 0;
+  position: relative;
+  height: 2.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $MAIN_PURPLE;
+  color: $MAIN_WHITE;
+  z-index: 99999;
+
+  .wrapper {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-align: center;
+
+    @media screen and (max-width: $mobile) {
+      height: max-content;
+      padding: 0.25rem 0;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@use "../../app/variables" as *;
+
+.container {
+  position: fixed;
+  position: -webkit-sticky;
+  top: 2.5rem;
+  left: 0;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  z-index: 99999;
+
+  @media screen and (max-width: $mobile) {
+    height: 10vh;
+  }
+
+  &.scrolling {
+    top: 0;
+    border-bottom: 1px solid $GRAY_COOL_400;
+  }
+
+  nav {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    min-height: $NAVBAR_HEIGHT;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $MAIN_WHITE;
+    background: $ALPHA_BLACK_03;
+    backdrop-filter: blur(64px);
+    z-index: 99999;
+
+    ul {
+      height: $NAVBAR_HEIGHT;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+
+      @media screen and (max-width: $mobile) {
+        display: none;
+      }
+
+      li {
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        svg {
+          transition: all 0.5s ease-in-out;
+          &.active {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    .logo {
+      img {
+        height: 30px;
+        width: 100%;
+        object-fit: cover;
+        cursor: pointer;
+
+        @media screen and (max-width: $mobile) {
+          height: 100%;
+        }
+      }
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+
+      @media screen and (max-width: $mobile) {
+        display: none;
+      }
+
+      button {
+        max-width: 400px;
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        cursor: pointer;
+        border: 1px solid $GRAY_COOL;
+      }
+    }
+  }
+}

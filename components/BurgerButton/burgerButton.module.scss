@@ -1,0 +1,17 @@
+@use "../../app/variables" as *;
+
+.container {
+  display: block;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background-color: $ALPHA_WHITE_01;
+  border-radius: 0.25rem;
+
+  @media screen and (min-width: $mobile) {
+    display: none;
+  }
+}
